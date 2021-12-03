@@ -1,0 +1,11 @@
+<div class="justify-content-center">
+  <p *ngIf="intervalId === null">At your service.</p>
+  <div class="alert alert-success" *ngIf="intervalId !== null">
+    <div class="spinner-border text-success" role="status">
+      <span class="sr-only">Working for you...</span>
+    </div>
+    <span class="text-success d-inline-block p-2">I am working for you! Just keep this window/tab open!</span>
+  </div>
+  <button type="button" class="btn btn-lg btn-warning" (click)="stop()" *ngIf="intervalId !== null && intervalId !== 0"><fa-icon [icon]="faStopped" [fixedWidth]="true"></fa-icon> Stop this!</button>
+  <button type="button" class="btn btn-lg btn-success" (click)="start(true)" *ngIf="intervalId === null"><fa-icon [icon]="faPlaying" [fixedWidth]="true"></fa-icon> Start telling me.</button>
+</div>

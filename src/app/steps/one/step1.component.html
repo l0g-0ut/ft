@@ -1,0 +1,46 @@
+<ng-container *ngIf="loadingElement === null">
+  <ng-container *ngIf="availableSetups.length > 0">
+    <h2 *ngIf="error === null">Please enter your EmlaLock API Data</h2>
+    <p *ngIf="error === null">Keep in mind: It is not a good idea to enter your API data into an application you don't trust.</p>
+    <div *ngIf="error === null" class="alert alert-info"><fa-icon [icon]="faInfo" [fixedWidth]="true"></fa-icon> You can find your credentils under <b><a href="https://www.emlalock.com/#/settings">Settings</a></b> in the tab <b>API</b>!</div>
+    <form (submit)="submit(availableSetups[+selectedLanguageSetup.value])" *ngIf="error === null">
+      <div class="mb-1">
+        <label for="apiUserID" [ngClass]="{'form-label': true, 'text-danger': apiUserValidated === false}">User ID</label>
+        <input (change)="validateUser()" (keyup)="validateUser()" [ngClass]="{'form-control': true, 'is-valid': apiUserValidated === true, 'is-invalid': apiUserValidated === false}" [pattern]="userPattern" type="text" id="apiUserID" [(ngModel)]="apiData.apiUser" [ngModelOptions]="{standalone: true}">
+      </div>
+      <div class="mb-1">
+        <label for="apiKey" [ngClass]="{'form-label': true, 'text-danger': apiKeyValidated === false}">API Key</label>
+        <input (change)="validateKey()" (keyup)="validateKey()" [ngClass]="{'form-control': true, 'is-valid': apiKeyValidated === true, 'is-invalid': apiKeyValidated === false}" [pattern]="keyPattern" type="text" id="apiKey" [(ngModel)]="apiData.apiKey" [ngModelOptions]="{standalone: true}">
+      </div>
+      <div class="mb-1">
+        <label for="langSet">Select Language:</label>
+        <div class="input-group">
+          <select #selectedLanguageSetup class="form-select" aria-label="Select Language" id="langSet">
+            <ng-container *ngFor="let setup of availableSetups; index as i">
+              <option [value]="i" [attr.selected]="setup.voice.default">{{setup.strings['_']}} (with the voice of {{setup.voice.name}})</option>
+            </ng-container>
+          </select>
+          <button (click)="playTest(availableSetups[+selectedLanguageSetup.value])" class="btn btn-outline-secondary" type="button" tabindex="-1"><fa-icon [fixedWidth]="true" [icon]="faPlay"></fa-icon> Test</button>
+        </div>
+      </div>
+      <div class="alert alert-warning mt-5 mb-5"><b>Your API credentials will not be saved and are only transmitted to the EmlaLock API. Everything runs locally on your computer/tablet/smartphone.</b> If you want, check the source code of this app: <a href="https://github.com/l0g-0ut/ft">github.com/l0g-0ut/ft</a>.</div>
+      <button type="submit" class="btn btn-lg btn-primary">Confirm</button>
+      <p class="mt-4"><small class="text-muted">This service is not affiliated with EmlaLock!</small></p>
+    </form>
+    <div class="alert alert-danger" role="alert" *ngIf="error !== null">
+      {{error}}
+    </div>
+  </ng-container>
+  <ng-container *ngIf="availableSetups.length == 0">
+    <div class="alert alert-danger" role="alert">
+      Sorry, it seems your browser doesn't support this app or there's no match between supported languages and available voices.
+    </div>
+  </ng-container>
+</ng-container>
+
+<ng-container *ngIf="loadingElement !== null">
+  <div class="spinner-border" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div class="d-inline-block p-2">{{loadingElement}}</div>
+</ng-container>

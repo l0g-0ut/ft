@@ -1,0 +1,44 @@
+{
+  "defaultLanguage": "en-US",
+  "languages": {
+    "en-US": {
+      "_": "English (US)",
+      "hello": "Hello! I am Frust Time.",
+      "test": "At the next sound, 5 weeks, 4 days, 3 hours, and 2 minutes remain.",
+      "peep": "peep!",
+      "sorry": "Sorry, I'm unable to get your remaining time. Maybe your time is already over or your holder decided not to let you know anymore. , ! , I'll try again later.",
+      "error": "I'm currently getting an error from the EmlaLock API. , ! , Please check your credentials and internet connection. , ! , I'll try again later.",
+      "noSession": "It seems you're not in a session right now. , ! , I'll try again later.",
+      "week": "Week",
+      "weeks": "Weeks",
+      "day": "Day",
+      "days": "Days",
+      "hour": "Hour",
+      "hours": "Hours",
+      "minute": "Minute",
+      "minutes": "Minutes",
+      "greeting": "Welcome, {user}!",
+      "time": "At the next sound, about {time} remain."
+    },
+    "de-DE": {
+      "_": "Deutsch",
+      "_delta": 3,
+      "hello": "Hallo! Ich bin Frust Zeit.",
+      "test": "Beim nächsten Ton verbleiben 5 Wochen, 4 Tage, 3 Stunden und 2 Minuten.",
+      "peep": "Piep!",
+      "sorry": "Entschuldige, ich kann aktuell Deine Rest-Zeit nicht lesen. Vielleicht ist Deine Zeit vorbei oder Dein Holder hat beschlossen, dass Du es nicht mehr wissen sollst. , ! , Ich versuche es später noch einmal.",
+      "error": "Ich erhalte aktuell eine Fehlermeldung von der EmlaLock API. , ! , Bitte prüfe Deine Zugangsdaten und die Internetverbindung. , ! , Ich versuche es später noch einmal.",
+      "noSession": "Scheinbar bist Du gerade in keiner Sitzung. , ! , Ich versuche es später noch einmal.",
+      "week": "Woche",
+      "weeks": "Wochen",
+      "day": "Tag",
+      "days": "Tage",
+      "hour": "Stunde",
+      "hours": "Stunden",
+      "minute": "Minute",
+      "minutes": "Minuten",
+      "greeting": "Willkommen, {user}!",
+      "time": "Beim nächsten Ton verbleiben in etwa {time}."
+    }
+  }
+}

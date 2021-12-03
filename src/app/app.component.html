@@ -1,0 +1,24 @@
+<nav ngbNav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Frust Time | v{{version}}-alpha</a>
+    <button (click)="isMenuCollapsed = !isMenuCollapsed" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="?p="><fa-icon [fixedWidth]="true" [icon]="faReload"></fa-icon>Restart</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid mt-2 mb-3">
+  <div class="card bg-light text-dark">
+    <h1 class="card-header">{{title}}</h1>
+    <div class="card-body">
+      <step1 *ngIf="setup === null" [apiData]="apiData" (callback)="onConfirm($event)"></step1>
+      <step2 *ngIf="setup !== null" [setup]="setup" [apiData]="apiData"></step2>
+    </div>
+    <div class="card-footer">
+      <small><span class="text-warning"><fa-icon [fixedWidth]="true" [icon]="faWarning"></fa-icon></span> You need an EmlaLock account and a running session to use this app!</small>
+    </div>
+  </div>
+</div>
