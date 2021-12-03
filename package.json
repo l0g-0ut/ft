@@ -1,12 +1,12 @@
 {
   "name": "frusttime",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "uat": "ng serve --host 0.0.0.0 --disable-host-check",
     "build": "ng build",
-    "release": "npm version --no-git-tag-version patch && node copy_version.js && git commit -a -m \"version++\" && ng build --base-href /elg/",
+    "release": "npm version --no-git-tag-version patch && node copy_version.js && git commit -a -m \"version++\" && ng build --base-href /ft/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "copy-version": "node copy_version.js"
