@@ -17,7 +17,7 @@
         <div class="input-group">
           <select #selectedLanguageSetup class="form-select" aria-label="Select Language" id="langSet">
             <ng-container *ngFor="let setup of availableSetups; index as i">
-              <option [value]="i" [attr.selected]="setup.voice.default">{{setup.strings['_']}} (with the voice of {{setup.voice.name}})</option>
+              <option [value]="i" [selected]="setup.voice.default === true">{{setup.strings['_']}} (with the voice of {{setup.voice.name}})</option>
             </ng-container>
           </select>
           <button (click)="playTest(availableSetups[+selectedLanguageSetup.value])" class="btn btn-outline-secondary" type="button" tabindex="-1"><fa-icon [fixedWidth]="true" [icon]="faPlay"></fa-icon> Test</button>
