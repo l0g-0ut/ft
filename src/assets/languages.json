@@ -4,7 +4,7 @@
     "en-US": {
       "_": "English (US)",
       "hello": "Hello! I am Frust Time.",
-      "test": "At the next sound, 5 weeks, 4 days, 3 hours, and 2 minutes remain.",
+      "test": "At the next sound, about 5 weeks, 4 days, 3 hours, and 2 minutes remain.",
       "peep": "peep!",
       "sorry": "Sorry, I'm unable to get your remaining time. Maybe your time is already over or your holder decided not to let you know anymore. , ! , I'll try again later.",
       "error": "I'm currently getting an error from the EmlaLock API. , ! , Please check your credentials and internet connection. , ! , I'll try again later.",
@@ -19,6 +19,25 @@
       "minutes": "Minutes",
       "greeting": "Welcome, {user}!",
       "time": "At the next sound, about {time} remain."
+    },
+    "en-GB": {
+      "_": "English (GB)",
+      "hello": "Hello! I am Frust Time.",
+      "test": "I'm happy to tell you that, at the next sound, about 5 weeks, 4 days, 3 hours, and 2 minutes remain.",
+      "peep": "tea!",
+      "sorry": "Sorry, I'm unable to get your remaining time. Maybe your time is already over or your holder decided not to let you know anymore. , ! , I'll try again later.",
+      "error": "I'm currently getting an error from the EmlaLock API. , ! , Please check your credentials and internet connection. , ! , I'll try again later.",
+      "noSession": "It seems you're not in a session right now. , ! , I'll try again later.",
+      "week": "Week",
+      "weeks": "Weeks",
+      "day": "Day",
+      "days": "Days",
+      "hour": "Hour",
+      "hours": "Hours",
+      "minute": "Minute",
+      "minutes": "Minutes",
+      "greeting": "A warm welcome for you, {user}!",
+      "time": "I'm happy to tell you that at the next sound, about {time} remain."
     },
     "de-DE": {
       "_": "Deutsch",
