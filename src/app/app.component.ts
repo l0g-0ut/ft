@@ -18,7 +18,7 @@ export class AppComponent {
   faReload = faSyncAlt;
   faWarning = faExclamationTriangle;
 
-  title = 'What time is it?';
+  title = 'Think you\'re already frustrated? Wait for it...';
 
   apiData = new ApiData('', '');
 
@@ -28,6 +28,7 @@ export class AppComponent {
     if (!setup) {
       return;
     }
+    this.title = 'Listen to me! I will repeat myself!';
     this.setup = setup;
   }
 
