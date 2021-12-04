@@ -13,7 +13,7 @@
         <input (change)="validateKey()" (keyup)="validateKey()" [ngClass]="{'form-control': true, 'is-valid': apiKeyValidated === true, 'is-invalid': apiKeyValidated === false}" [pattern]="keyPattern" type="text" id="apiKey" [(ngModel)]="apiData.apiKey" [ngModelOptions]="{standalone: true}">
       </div>
       <div class="mb-1">
-        <label for="langSet">Select Language:</label>
+        <label for="langSet">Language</label>
         <div class="input-group">
           <select #selectedLanguageSetup class="form-select" aria-label="Select Language" id="langSet">
             <ng-container *ngFor="let setup of availableSetups; index as i">
@@ -23,7 +23,11 @@
           <button (click)="playTest(availableSetups[+selectedLanguageSetup.value])" class="btn btn-outline-secondary" type="button" tabindex="-1"><fa-icon [fixedWidth]="true" [icon]="faPlay"></fa-icon> Test</button>
         </div>
       </div>
-      <div class="alert alert-warning mt-5 mb-5"><b>Your API credentials will not be saved and are only transmitted to the EmlaLock API. Everything runs locally on your computer/tablet/smartphone.</b> If you want, check the source code of this app: <a href="https://github.com/l0g-0ut/ft">github.com/l0g-0ut/ft</a>.</div>
+      <div class="alert alert-warning mt-5 mb-5">
+        <b>Read-only access only!</b> This app uses a read-only access to your EmlaLock API. No data is changed while using this app. Check out <a href="https://l0g-0ut.github.io/elg/">l0g-0ut.github.io/elg/</a>, if you want to have your time and requirements changed.
+        <br><br>
+        <b>Your API credentials will not be saved and are only transmitted to the EmlaLock API. Everything runs locally on your computer/tablet/smartphone.</b> If you want, check the source code of this app: <a href="https://github.com/l0g-0ut/ft">github.com/l0g-0ut/ft</a>.
+      </div>
       <button type="submit" class="btn btn-lg btn-primary">Confirm</button>
       <p class="mt-4"><small class="text-muted">This service is not affiliated with EmlaLock!</small></p>
     </form>
