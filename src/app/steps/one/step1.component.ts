@@ -55,11 +55,17 @@ export class Step1Component implements OnInit {
 
   getAvailableVoices(): Promise<SpeechSynthesisVoice[]> {
     const synth = window.speechSynthesis;
+    let retryCount = 0;
     return new Promise((resolve, reject) => {
         const interval = setInterval(() => {
+          retryCount++;
           if (synth.getVoices().length !== 0) {
             resolve(synth.getVoices());
             clearInterval(interval);
+          }
+          if (retryCount > 1000) {
+            clearInterval(interval);
+            reject();
           }
         }, 10);
       }
@@ -79,14 +85,24 @@ export class Step1Component implements OnInit {
       this.languageData = lang.languages;
       this.loadingElement = 'Loading supported voices...';
       this.getAvailableVoices().then((voices) => {
+        const seen: string[] = [];
         this.loadingElement = 'Matching languages and voices...';
         const supportedLanguageCodes = Object.keys(lang.languages);
         voices.forEach((voice) => {
+          const seenKey = voice.lang + '#' + voice.name;
           if (voice.localService) {
             if (supportedLanguageCodes.indexOf(voice.lang) >= 0) {
-              this.availableSetups.push(new SelectedLanguage(lang.languages[voice.lang], voice));
+              if (seen.indexOf(seenKey) < 0) {
+                this.availableSetups.push(new SelectedLanguage(lang.languages[voice.lang], voice));
+                seen.push(seenKey);
+              }
             }
           }
+        });
+        this.availableSetups.sort((a, b) => {
+          const compA = (a.voice.lang + '#' + a.voice.name).toLowerCase();
+          const compB = (b.voice.lang + '#' + b.voice.name).toLowerCase();
+          return compA > compB ? 1 : (compA < compB ? -1 : 0);
         });
         this.loadingElement = null;
       });

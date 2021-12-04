@@ -12,8 +12,9 @@
         <label for="apiKey" [ngClass]="{'form-label': true, 'text-danger': apiKeyValidated === false}">API Key</label>
         <input (change)="validateKey()" (keyup)="validateKey()" [ngClass]="{'form-control': true, 'is-valid': apiKeyValidated === true, 'is-invalid': apiKeyValidated === false}" [pattern]="keyPattern" type="text" id="apiKey" [(ngModel)]="apiData.apiKey" [ngModelOptions]="{standalone: true}">
       </div>
-      <div class="mb-1">
-        <label for="langSet">Language</label>
+      <hr>
+      <div class="mb-1 mt-1">
+        <label for="langSet" class="form-label">Language</label>
         <div class="input-group">
           <select #selectedLanguageSetup class="form-select" aria-label="Select Language" id="langSet">
             <ng-container *ngFor="let setup of availableSetups; index as i">
