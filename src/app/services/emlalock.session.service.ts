@@ -33,7 +33,7 @@ export interface SessionServiceResponse {
 export class EmlalockSessionServiceService {
 
   public getSessionInformation(apiData: ApiData): Observable<SessionServiceResponse> {
-    return this.http.get<any>('https://api.emlalock.com/info/', {
+    return this.http.get<SessionServiceResponse>('https://api.emlalock.com/info/', {
       headers: {
         'Accept': 'application/json',
       },
