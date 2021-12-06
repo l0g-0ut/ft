@@ -2,7 +2,7 @@
   <ng-container *ngIf="availableSetups.length > 0">
     <h2 *ngIf="error === null">Please enter your EmlaLock API Data</h2>
     <p *ngIf="error === null">Keep in mind: It is not a good idea to enter your API data into an application you don't trust.</p>
-    <div *ngIf="error === null" class="alert alert-info"><fa-icon [icon]="faInfo" [fixedWidth]="true"></fa-icon> You can find your credentils under <b><a href="https://www.emlalock.com/#/settings">Settings</a></b> in the tab <b>API</b>!</div>
+    <div *ngIf="error === null" class="alert alert-info"><fa-icon [icon]="faInfo" [fixedWidth]="true"></fa-icon> You can find your credentials under <b><a href="https://www.emlalock.com/#/settings">Settings</a></b> in the tab <b>API</b>!</div>
     <form (submit)="submit(availableSetups[+selectedLanguageSetup.value])" *ngIf="error === null">
       <div class="mb-1">
         <label for="apiUserID" [ngClass]="{'form-label': true, 'text-danger': apiUserValidated === false}">User ID</label>
