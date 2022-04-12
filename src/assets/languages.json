@@ -58,6 +58,25 @@
       "minutes": "Minuten",
       "greeting": "Willkommen, {user}!",
       "time": "Beim nächsten Ton verbleiben in etwa {time}."
+    },
+    "nl-NL": {
+      "_": "Nederlands",
+      "hallo": "Hallo! Ik ben frustratie tijd.",
+      "test": "bij het volgende geluid, nog ongeveer 5 weken, 4 dagen, 3 uur, en 2 minuten te gaan.",
+      "peep": "peep!",
+      "sorry": "Sorry, ik kan je tijd die nog over is niet zien. Misschien is je tijd al om of heeft je houder besloten de tijd te verbergen. , ! , ik probeer het later nog een keer.",
+      "error": "ik kreeg momenteel een error van de EmlaLock API. , ! , check alsjeblieft je settings of je connectie. , ! , ik probeer het later nog een keer.",
+      "noSession": "het lijkt erop dat je momenteel niet in een sessie zit. , ! , ik probeer het later nog een keer.",
+      "week": "Week",
+      "weeks": "Weken",
+      "day": "dag",
+      "days": "dagen",
+      "hour": "uur",
+      "hours": "uren",
+      "minute": "minuut",
+      "minutes": "minuten",
+      "greeting": "Welkom, {user}!",
+      "time": "Bij het volgende geluid, is er nog {time} te gaan."
     }
   }
 }
