@@ -86,6 +86,7 @@ export class Step1Component implements OnInit {
       this.loadingElement = 'Loading supported voices...';
       this.getAvailableVoices().then((voices) => {
         const seen: string[] = [];
+        let setDefault: boolean = false;
         this.loadingElement = 'Matching languages and voices...';
         const supportedLanguageCodes = Object.keys(lang.languages);
         voices.forEach((voice) => {
@@ -93,7 +94,11 @@ export class Step1Component implements OnInit {
           if (voice.localService) {
             if (supportedLanguageCodes.indexOf(voice.lang) >= 0) {
               if (seen.indexOf(seenKey) < 0) {
-                this.availableSetups.push(new SelectedLanguage(lang.languages[voice.lang], voice));
+                const mayBeDefault = lang.defaultLanguage === voice.lang
+                this.availableSetups.push(new SelectedLanguage(lang.languages[voice.lang], voice, !setDefault && mayBeDefault));
+                if (mayBeDefault) {
+                  setDefault = true;
+                }
                 seen.push(seenKey);
               }
             }
